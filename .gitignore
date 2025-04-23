@@ -1,0 +1,7 @@
+
+weather_data.txt
+*.json
+idea /
+venv /
+*.idea
+*.venv
