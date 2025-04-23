@@ -35,7 +35,7 @@ def get_weather_data():
 def data_txt(data):
     if data:
         today = date.today().strftime('%b-%d-%Y')
-        with open('output.txt', 'w', encoding="utf-8") as file:
+        with open('weather_data.txt', 'w', encoding="utf-8") as file:
             file.write('Popular Cities Forecast' + '\n')
             file.write(today + '\n')
             file.write('=' * 20 + '\n')
@@ -50,7 +50,7 @@ def data_json(data):
         today = date.today().strftime('%b-%d-%Y')
         cities = [{'city': city, 'temp': temp, 'condition': condition} for city, temp, condition in data]
         data_js = {'title': 'Popular Cities Forecast', 'date': today, 'Cities': cities}
-        with open('output.json', 'w') as file:
+        with open('weather_data.json', 'w') as file:
             json.dump(data_js, file, ensure_ascii = False)
     else:
         print('No Data')
